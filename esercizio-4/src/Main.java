@@ -1,14 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        double x = 4.13;
-        double y = 5.25;
-        System.out.println("somma di x + y = " + somma (x,y));
-
-
+        System.out.println("somma di x + y = " + somma (5,8));
     }
 
-    public static int somma(double x,double y){
-        int h = (int) x + (int) y;
+    public static int somma(int x,int y){
+        int h = x + y;
         return h;
     }
 
