@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        char[] array = new char[10];
+        char[] array = new char[20];
         occorenza(array);
     }
     public static void occorenza(char[] a) {

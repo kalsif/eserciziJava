@@ -1,9 +1,10 @@
 
 public class Main {
     public static void main(String[] args) {
-        int[][] array = {{1, 2, 3,}, {4, 5, 6}};
+        int[][] array = {{1, 2, 3}, {4, 5, 6}};
         int[][] newArray = scambio(array);
         stampa(newArray);
+        controllo(array);
 
     }
     public static int [][] scambio(int[][] x){
@@ -29,6 +30,11 @@ public class Main {
                 System.out.println("value ["+i+"]["+j+"]"+z[i][j]);
 
             }
+        }
+    }
+    public static void controllo(int[][] matrice){
+        for(int i = 0;i<matrice.length;i++){
+            System.out.println(matrice[i].length);
         }
     }
 }
