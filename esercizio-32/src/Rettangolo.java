@@ -1,10 +1,7 @@
 public class Rettangolo extends Forma{
-    public double base;
-    public double altezza;
 
-    public Rettangolo(double base,double altezza){
-        this.base = base;
-        this.altezza = altezza;
+    public Rettangolo(int base, int altezza) {
+        super(base, altezza);
     }
 
     @Override
