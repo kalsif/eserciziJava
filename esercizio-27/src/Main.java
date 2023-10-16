@@ -1,40 +1,58 @@
 
 public class Main {
     public static void main(String[] args) {
-        int[][] array = {{1, 2, 3}, {4, 5, 6}};
-        int[][] newArray = scambio(array);
-        stampa(newArray);
-        controllo(array);
+        int[][] matrice = {{1, 2, 3}, {4, 5, 6}};
+
+        if(righeStessoNumeroDiElementi(matrice)){
+            stampa(scambio(matrice));
+        }else{
+            System.out.println("La matrice ha dimensioni diverse.");
+        }
+
+
 
     }
-    public static int [][] scambio(int[][] x){
-        int righe = x.length;
-        int colonne = x[0].length;
-        //inizializzo la newArray con i valori invertiti
-        //dove le righe sono uguali alla lunghezza delle colonne e viceversa
-        int[][] newArray = new int[colonne][righe];
-        //ciclo all interno di array
-        for (int i = 0; i < righe; i++) {
-            for (int j = 0; j < colonne; j++) {
-                //dichiaro che i valori di newArray vuoti vengano riempiti
-                //con quelli di array
-                newArray[j][i] = x[i][j];
+    public static int [][] scambio(int[][] matrice) {
+        int[][] risultato = new int[matrice[0].length][matrice.length];
+        for (int i = 0; i < matrice.length; i++){
+            for (int j = 0;j<matrice[i].length;j++){
+                risultato[j][i] = matrice[i][j];
             }
         }
-        return newArray;
+        return  risultato;
     }
-    // creo una fuzione che mi stampi la newArray a video
-    public static void stampa(int[][] z){
-        for (int i = 0; i < z.length; i++) {
-            for (int j = 0; j < z[i].length; j++) {
-                System.out.println("value ["+i+"]["+j+"]"+z[i][j]);
 
+    public static boolean righeStessoNumeroDiElementi(int[][] matrice){
+        int righe = 0;
+        for (int i = 0;i<matrice.length;i++){
+            righe++;
+        }
+        int [] elementiColonne = new int[righe];
+
+        for(int i = 0;i< matrice.length;i++){
+            elementiColonne[i]= matrice[i].length;
+        }
+        return sonoUguali(elementiColonne);
+    }
+
+    public static boolean sonoUguali(int[] array){
+       if (array == null || array.length == 0){
+           return false;
+       }
+       for (int i=0;i< array.length;i++){
+           if(array[0] != array[1]){
+               return false;
+           }
+       }
+       return true;
+    }
+    public static void stampa(int[][] matrice){
+        for (int i=0;i< matrice.length;i++){
+            for (int j=0;j< matrice[i].length;j++){
+                System.out.println(matrice[i][j] + " ");
             }
+            System.out.println();
         }
     }
-    public static void controllo(int[][] matrice){
-        for(int i = 0;i<matrice.length;i++){
-            System.out.println(matrice[i].length);
-        }
-    }
+
 }
