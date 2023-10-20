@@ -15,9 +15,9 @@ public class Main {
         suv.add("Range");
 
         ArrayList<String> suv2 = new ArrayList<>();
-        suv.add("X5");
-        suv.add("Q5");
-        suv.add("Range");
+        suv2.add("X5");
+        suv2.add("Q5");
+        suv2.add("Range");
 
         Auto modello = new Auto(utilitarie);
         Auto modello1 = new Auto(suv);
@@ -25,9 +25,11 @@ public class Main {
 
 
 
-        Set<Auto> lista = riempi(modello);
+        Set<Auto> lista = riempi(modello,modello1);
 
-        System.out.println(modello);
+        lista.add(modello2);
+
+
         System.out.println(lista);;
     }
     public static HashSet<Auto> riempi(Auto modello,Auto modello1){
