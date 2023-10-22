@@ -2,7 +2,12 @@ public class Main {
     public static void main(String[] args) {
         int x = 7;
         int y = 0;
-        System.out.println(divisione(x,y));
+        try{
+            System.out.println(divisione(x,y));
+        }catch (ArithmeticException e){
+            System.out.println(e);
+        }
+
 
     }
     public static int divisione(int x,int y){
