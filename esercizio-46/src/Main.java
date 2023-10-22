@@ -1,41 +1,49 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> utilitarie = new ArrayList<>();
-        utilitarie.add("punto");
-        utilitarie.add("C1");
-        utilitarie.add("Panda");
+        Random r = new Random();
+        Scanner in = new Scanner(System.in);
 
-        ArrayList<String> suv = new ArrayList<>();
-        suv.add("X5");
-        suv.add("Q5");
-        suv.add("Range");
+        HashSet<Integer> lista =riempi(r);
+        System.out.println(lista);
+        System.out.print("Adesso scegli un numero da sottrarre alla lista = ");
+        Integer confronto = in.nextInt();
+        System.out.print("Lista con elementi rimossi = ");
+        System.out.println(rimuovi(lista, confronto));
 
-        ArrayList<String> suv2 = new ArrayList<>();
-        suv2.add("X5");
-        suv2.add("Q5");
-        suv2.add("Range");
+        System.out.println("L'elemento rimostto è = " + confronto);
+        System.out.println("Adesso svuotiamo la lista!!");
+        lista.clear();
 
-        Auto modello = new Auto(utilitarie);
-        Auto modello1 = new Auto(suv);
-        Auto modello2 = new Auto(suv2);
+        if(lista.isEmpty()){
+            System.out.println("La lista è vuota");
+        }else{
+            System.out.println("La lista non è vuota");
+        }
 
-
-
-        Set<Auto> lista = riempi(modello,modello1);
-
-        lista.add(modello2);
-
-
-        System.out.println(lista);;
     }
-    public static HashSet<Auto> riempi(Auto modello,Auto modello1){
-        HashSet<Auto> lista = new HashSet<>();
-        lista.add(modello);
-        lista.add(modello1);
+    public static HashSet<Integer> riempi(Random r){
+        HashSet<Integer> lista = new HashSet<>();
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
+        lista.add(r.nextInt(10));
         return lista;
     }
+    public static HashSet<Integer> rimuovi(HashSet<Integer> lista, Integer confronto){
+        Iterator<Integer> iterator = lista.iterator();
+        while (iterator.hasNext()){
+            Integer numero = iterator.next();
+            if(numero.equals(confronto)){
+                iterator.remove();
+            }
+        }
+        return lista;
+    }
+
 }
