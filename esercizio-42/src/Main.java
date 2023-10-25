@@ -1,17 +1,19 @@
 public class Main {
     public static void main(String[] args) {
-            Integer numeratore = null;
+            Integer numeratore = 5;
             Integer denominatore = null;
-
-            System.out.println(operazione(numeratore,denominatore));
+            try {
+                System.out.println(operazione(numeratore,denominatore));
+            }catch (NullPointerException e){
+                System.out.println("Il valore è nullo = "+ e.getMessage());
+            }
     }
-    public static String operazione(Integer num,Integer denom){
+    public static Integer operazione(Integer num,Integer denom){
         Integer risultato = 0;
-        try {
-            risultato = num*denom;
-        }catch (NullPointerException e){
-            System.out.println("I valori non possono essere nulli");
+        risultato = num*denom;
+        if(num==null||denom==null){
+            throw new NullPointerException();
         }
-        return "Quindi il risultato è ancora = " + risultato;
+        return risultato;
     }
 }
