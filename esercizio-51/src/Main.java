@@ -7,15 +7,15 @@ public class Main {
         Student studente3 = new Student("Michela", 3);
         Student studente4 = new Student("Giovanna", 4);
 
-        Map<String, Student> listaAlunni = new LinkedHashMap<>();
-        listaAlunni.put("Studente 1",studente1);
-        listaAlunni.put("Studente 2 ",studente2);
-        listaAlunni.put("Studente 3 ",studente3);
-        listaAlunni.put("Studente 4 ",studente4);
+        Map<String, Student> listaAlunni = new HashMap<>();
+        listaAlunni.put("2",studente2);
+        listaAlunni.put("3",studente3);
+        listaAlunni.put("1",studente1);
+        listaAlunni.put("4",studente4);
 
-        System.out.println(listaAlunni);
+        Map<String,Student> listaOrdinata = new LinkedHashMap<>(listaAlunni);
 
-        Collection<Student> valori = listaAlunni.values();
+        Collection<Student> valori = listaOrdinata.values();
 
         System.out.println(valori);
 
