@@ -17,11 +17,9 @@ public class Main {
                 System.out.println(Arrays.toString(riempiArray(array, r)));
                 System.out.println("scegli l indice del array e il divisore = ");
                 dividiPerNum(array, sc);
-            }catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println("Indice non presente nell' array " + e);
-            }catch (ArithmeticException e) {
-                System.out.println("Non puoi dividere per 0 " + e);
-            }catch (InputMismatchException e){
+            }catch (ArrayIndexOutOfBoundsException | ArithmeticException e) {
+                System.out.println(e.getMessage());
+            } catch (InputMismatchException e){
                 System.out.println("Non puoi usare altri caratteri!! " + e);
                 sc.next();
             }finally {
@@ -36,11 +34,20 @@ public class Main {
         }
         return array;
     }
-    public static void dividiPerNum(int[] array, Scanner sc) {
+    public static void dividiPerNum(int[] array, Scanner sc){
         int indice= sc.nextInt();
+
+        if(indice<0){
+            throw new ArrayIndexOutOfBoundsException("Indice non presente nell' array ");
+        }
+
         System.out.println("la tua scelta è = " + array[indice]);
         int num = sc.nextInt();
         int divisione = 0;
+
+        if(num == 0){
+            throw new ArithmeticException("Non puoi dividere per 0");
+        }
 
         for (int i = 0; i < array.length; i++) {
             divisione = array[indice] / num;
