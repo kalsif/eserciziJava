@@ -27,14 +27,12 @@ class MainTest {
 
     @Test
     public void quoziente_tra_int_e_0() {
-        Exception exception = assertThrows(NumberFormatException.class, () -> {
-            Integer.parseInt("1a");
+        Exception exception = assertThrows(ArithmeticException.class, () -> {
+            Main.quoziente(5,0);
         });
 
-        String expectedMessage = "For input string";
-        String actualMessage = exception.getMessage();
 
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertEquals("Non puoi dividere per 0",exception.getMessage());
     }
 
 

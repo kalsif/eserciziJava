@@ -9,6 +9,8 @@ public class Main {
 
         if(x == null || y == null){
             return null;
+        }else if(y==0){
+            throw new ArithmeticException("Non puoi dividere per 0");
         }
 
         int q = x/y;
