@@ -7,18 +7,13 @@ import java.time.format.FormatStyle;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
-    private Main testing = new Main();
-    private OffsetDateTime data = OffsetDateTime.parse("2023-03-01T13:00:00Z");
-
-
-    @Test
-    void main() {
-    }
+    private final Main testing = new Main();
+    private final OffsetDateTime data = OffsetDateTime.parse("2023-03-01T13:00:00Z");
 
     @Test
     void formatt() {
         String formatData = data.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
-        String data1 = testing.formatt(data);
+        String data1 = Main.formatt(data);
 
         assertEquals(formatData,data1,"Data formattata");
     }
@@ -27,8 +22,7 @@ class MainTest {
     void formattNull() {
         String data1 = null;
 
-        assertNull(data1,"Data formattata");
+        assertNull(null,"Data formattata");
     }
-
 
 }
