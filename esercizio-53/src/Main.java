@@ -3,21 +3,31 @@ import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
+// Pair svolto con Valeria!!!
+
 public class Main {
     public static void main(String[] args) {
-        OffsetDateTime data = OffsetDateTime.parse("2002-03-01T13:00:00Z");
-        String dataStringa2 = data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
-        String dataStringa3 = data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
-
-
         ZonedDateTime data2 = OffsetDateTime.parse("2002-03-01T13:00:00Z").toZonedDateTime();
-        String dataStringa = data2.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL));
+        OffsetDateTime data = OffsetDateTime.parse("2002-03-01T13:00:00Z");
 
 
-        System.out.println(dataStringa);
-        System.out.println(dataStringa2);
-        System.out.println(dataStringa3);
+        System.out.println(formatFull(data2));
+        System.out.println(formatMedium(data));
+        System.out.println(formatShort(data));
+
     }
 
-    // Pair svolto con Valeria!!!
+    public static String formatFull(ZonedDateTime data){
+        return data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL));
+    }
+
+    public static String formatMedium(OffsetDateTime data){
+        return data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
+    }
+
+    public static String formatShort(OffsetDateTime data){
+        return data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
+    }
+
+
 }
