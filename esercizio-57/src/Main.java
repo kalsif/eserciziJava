@@ -8,16 +8,12 @@ public class Main {
 
         OffsetDateTime dataAttuale = OffsetDateTime.now();
 
-        compareDate(date1,date2,dataAttuale);
+        System.out.println("La prima data viene prima della seconda? " + firstBefore(date1,date2));
+        System.out.println("La seconda data viene dopo della prima? " + secondAfter(date2,date1));
+        compareToday(date1,date2,dataAttuale);
     }
 
-    public static void compareDate(OffsetDateTime date1,OffsetDateTime date2,OffsetDateTime dataAttuale){
-        Boolean firstBefore = date1.isBefore(date2);
-        System.out.println("La prima data viene prima della seconda? " + firstBefore);
-
-        Boolean secondAfter = date2.isAfter(date1);
-        System.out.println("La seconda data viene dopo della prima? " + secondAfter);
-
+    public static void compareToday(OffsetDateTime date1,OffsetDateTime date2,OffsetDateTime dataAttuale){
         if(date1.equals(OffsetDateTime.now())){
             System.out.println("E' uguale a data 1");
         }else if(date2.equals(OffsetDateTime.now())){
@@ -26,5 +22,13 @@ public class Main {
             System.out.println("queste date non corrispondono ad ora! Perchè oggi è = " + dataAttuale.format(DateTimeFormatter.ISO_DATE));
         }
 
+    }
+
+    public static Boolean firstBefore(OffsetDateTime date1 ,OffsetDateTime date2){
+        return date1.isBefore(date2);
+    }
+
+    public static Boolean secondAfter(OffsetDateTime date2, OffsetDateTime date1){
+        return date2.isAfter(date1);
     }
 }
