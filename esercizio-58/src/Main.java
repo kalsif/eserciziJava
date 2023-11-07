@@ -1,8 +1,15 @@
 public class Main {
     public static void main(String[] args) {
         int a = 20;
-        int b = 3;
-        System.out.println("Il quoziente della divisione è " + quoziente(a,b));
+        int b = 6;
+
+
+        try {
+            System.out.println("Il quoziente della divisione è " + quoziente(a,b));
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
     public static Integer quoziente(Integer x,Integer y){
