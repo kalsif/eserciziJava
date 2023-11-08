@@ -2,6 +2,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.math.RoundingMode;
 
+// Pair fatto con Andrea Monizza!!
+
 public class Numero {
     enum Oper{
         ADDIZIONE,
