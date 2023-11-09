@@ -10,13 +10,13 @@ public class Main {
 
     }
 
-    public static String formatt(OffsetDateTime data){
-        if(data==null){
-            return null;
+    public static String formatt(OffsetDateTime data) {
+        if (data != null) {
+            String formatData = data.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
+            return formatData;
+        } else {
+            return "Errore";
         }
-
-        String formatData = data.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
-        return formatData;
     }
 
 }

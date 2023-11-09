@@ -14,15 +14,13 @@ class MainTest {
     void formatt() {
         String formatData = data.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG));
         String data1 = Main.formatt(data);
-
         assertEquals(formatData,data1,"Data formattata");
     }
 
     @Test
     void formattNull() {
-        String data1 = null;
-
-        assertNull(null,"Data formattata");
+        Main.formatt(data);
+        assertEquals("Errore",Main.formatt(null));
     }
 
 }
