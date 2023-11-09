@@ -21,28 +21,41 @@ public class Main {
     }
 
     public static String printFull(ZonedDateTime data){
-        if(data == null){
-            return null;
+        if(data != null){
+            String formData = data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL));
+            System.out.println(formData);
+            return formData;
+        }else{
+            return "Errore";
         }
 
-        String formData = data.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.FULL));
-        System.out.println(formData);
-        return formData;
+
 
     }
 
     public static String printMed(OffsetDateTime data1){
-        String formData1 = data1.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
+        if(data1 != null){
+            String formData1 = data1.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM));
+            System.out.println(formData1);
+            return formData1;
+        }else{
+            return "Errore";
+        }
 
-        System.out.println(formData1);
-        return formData1;
     }
 
     public static String printShort(OffsetDateTime data1){
-        String formData2 = data1.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
+        if (data1 != null){
+            String formData2 = data1.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
+            System.out.println(formData2);
+            return formData2;
+        }else{
+            return "Errore";
+        }
 
-        System.out.println(formData2);
-        return formData2;
+
+
+
     }
 
 

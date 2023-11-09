@@ -23,9 +23,8 @@ class MainTest {
 
     @Test
     void printFullNull() {
-        String fullFormatt = null;
-
-        assertNull(fullFormatt,"Null");
+        Main.printFull(data);
+        assertEquals("Errore",Main.printFull(null));
     }
 
 
@@ -38,9 +37,8 @@ class MainTest {
     }
     @Test
     void printMedNull() {
-        String mediumFormatt = null;
-
-        assertNull(mediumFormatt,"Null");
+        Main.printMed(data1);
+        assertEquals("Errore",Main.printMed(null));
     }
 
     @Test
@@ -53,9 +51,8 @@ class MainTest {
 
     @Test
     void printShortNull() {
-        String shortFormatt = null;
-
-        assertNull(shortFormatt,"Null");
+        Main.printShort(data1);
+        assertEquals("Errore",Main.printShort(null));
     }
 
 
