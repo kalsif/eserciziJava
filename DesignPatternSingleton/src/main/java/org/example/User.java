@@ -1,11 +1,19 @@
 package org.example;
 
+
 public class User {
+    private static User user;
+
+    public static User getUser(){
+        if(user == null){
+            user = new User();
+        }
+
+        return user;
+    }
+
     private String nome;
     private int eta;
-
-    public User() {
-    }
 
 
     public String getNome() {
