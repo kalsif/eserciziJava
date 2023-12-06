@@ -5,8 +5,11 @@ public class PersonBuilder {
     private String lastName;
     private int age;
     private String address;
+    private String email;
 
-    public PersonBuilder(){
+    public PersonBuilder(String fistName,String lastName){
+        this.fistName = fistName;
+        this.lastName = lastName;
     }
 
     public PersonBuilder setFistName(String fistName) {
@@ -30,8 +33,14 @@ public class PersonBuilder {
         return this;
     }
 
+
+    public PersonBuilder setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
     public Person build(){
-        return new Person(fistName,lastName,age,address,null);
+        return new Person(fistName,lastName,age,address,email);
     }
 
 }
